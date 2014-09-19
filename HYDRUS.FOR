@@ -73,7 +73,7 @@
       iCount = NARGS()
       if(iCount.gt.1) then
         i2=1
-        call GETARG(i2, cDataPath, status)
+        call GETARG(i2, cDataPath)
       else
         cFileName = 'LEVEL_01.DIR'
         open(10,file=cFileName, status='old',err=901)
@@ -355,8 +355,8 @@
      !  call Exclusion(NumNP,NMat,NSD,ParD,ChPar,ThNew,vNew,ThOld,vOld)
 
       if(lScreen) write(*,*) 'beginning of numerical solution'
-      * call getdat(iYear,iMonth,iDay)
-      * call gettim(iHours,iMins,iSecs,i100th)
+      ! call getdat(iYear,iMonth,iDay)
+      ! call gettim(iHours,iMins,iSecs,i100th)
       Rtime1=RTime(iMonth,iDay,iHours,iMins,iSecs,i100th)
 
 *     Time stepping calculations ---------------------------------------
@@ -818,8 +818,8 @@ c      goto 1000
       integer*2 iYear,iMonth,iDay,iHours,iMins,iSecs,i100th
       double precision RTime1,RTime2,RTime
 
-      * call getdat(iYear,iMonth,iDay)
-      * call gettim(iHours,iMins,iSecs,i100th)
+      ! call getdat(iYear,iMonth,iDay)
+      ! call gettim(iHours,iMins,iSecs,i100th)
       Rtime2=RTime(iMonth,iDay,iHours,iMins,iSecs,i100th)
       if(lScreen) write( *,*) 'Real time [sec]',Rtime2-RTime1
       if(lPrint) then

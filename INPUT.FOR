@@ -140,8 +140,8 @@ c        read(*,*)
       do 11 i=1,ii
         write(iUnit(i),*,err=903)'******* Program HYDRUS'
         write(iUnit(i),*,err=903)'******* ',Hed
-        * call getdat(ii,imonth,iday)
-        * call gettim(ihours,mins,isecs,ii)
+        ! call getdat(ii,imonth,iday)
+        ! call gettim(ihours,mins,isecs,ii)
         write(iUnit(i),100,err=903) iday,imonth,ihours,mins,isecs
         write(iUnit(i),*,err=903)'Units: L = ',LUnit,', T = ',TUnit,
      !                                ', M = ',MUnit
