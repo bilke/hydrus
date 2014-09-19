@@ -70,7 +70,7 @@
 
       data lStopConv,iNonConv /.true. , 0 /
 
-      iCount = NARGS()
+      iCount = iargc() + 1 !NARGS()
       if(iCount.gt.1) then
         i2=1
         call GETARG(i2, cDataPath)
