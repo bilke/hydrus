@@ -2,7 +2,7 @@
 
 This is [Hydrus-1D](http://www.pc-progress.com/en/Default.aspx?hydrus-1d) adapted for CMake and GFortran. See the [Hydrus-1D technical manual](http://www.pc-progress.com/Downloads/Pgm_hydrus1D/HYDRUS1D-4.08.pdf) for more information.
 
-It was tested on Linux with gcc 4.8.1 and CMake 2.8.12.
+It was tested on Linux with gcc 4.8.1 and [CMake](http://cmake.org) 2.8.12.
 
 ## Instructions
 
