@@ -5,7 +5,7 @@ enable_language (Fortran)
 
 add_definitions(-DGFORTRAN)
 
-add_executable(hydrus
+add_executable(h1d_calc
 	HYDRUS.FOR
 	HYSTER.FOR
 	INPUT.FOR
