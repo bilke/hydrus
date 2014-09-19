@@ -140,8 +140,8 @@ c        read(*,*)
       do 11 i=1,ii
         write(iUnit(i),*,err=903)'******* Program HYDRUS'
         write(iUnit(i),*,err=903)'******* ',Hed
-        call getdat(ii,imonth,iday)
-        call gettim(ihours,mins,isecs,ii)
+        * call getdat(ii,imonth,iday)
+        * call gettim(ihours,mins,isecs,ii)
         write(iUnit(i),100,err=903) iday,imonth,ihours,mins,isecs
         write(iUnit(i),*,err=903)'Units: L = ',LUnit,', T = ',TUnit,
      !                                ', M = ',MUnit
@@ -149,7 +149,7 @@ c        read(*,*)
 
       if(CosAlf.le.1.) lCentrif=.false.
       if(lCentrif) then
-        g=9.80665*xConv/tConv/tConv 
+        g=9.80665*xConv/tConv/tConv
         CosAlf=CosAlf*CosAlf/g
       end if
 
@@ -297,7 +297,7 @@ c        read(*,*)
           do 16 ii=1,NS
             Conc(ii,i)=Conc(ii,nOld)-SConc(ii)*dx
             Sorb(ii,i)=Sorb(ii,nOld)-SSorb(ii)*dx
-            if(lBact.or.lDualNEq) 
+            if(lBact.or.lDualNEq)
      !        Sorb2(ii,i)=Sorb2(ii,nOld)-SSorb(ii)*dx
 16        continue
         end if
@@ -371,7 +371,7 @@ c        read(*,*)
           if(.not.lChem) then
             write(77,140,err=902) (Text3,NumNP-Node(j)+1,j=1,NObsA)
             write(77,200,err=902) (Text1,i=1,NObsA)
-          else 
+          else
             if(NS.eq.1)
      !        write(77,150,err=902) (Text3,NumNP-Node(j)+1,j=1,NObsA)
             if(NS.eq.2)
@@ -405,21 +405,21 @@ c        read(*,*)
             if(NS.eq.4)
      !        write(77,240,err=902) (Text1,(Text2,j=1,NS),i=1,NObsA)
             if(NS.eq.5)
-     !        write(77,250,err=902) (Text1,(Text2,j=1,NS),i=1,NObsA)  
+     !        write(77,250,err=902) (Text1,(Text2,j=1,NS),i=1,NObsA)
             if(NS.eq.6)
-     !        write(77,270,err=902) (Text1,(Text2,j=1,NS),i=1,NObsA)  
+     !        write(77,270,err=902) (Text1,(Text2,j=1,NS),i=1,NObsA)
             if(NS.eq.7)
-     !        write(77,271,err=902) (Text1,(Text2,j=1,NS),i=1,NObsA)  
+     !        write(77,271,err=902) (Text1,(Text2,j=1,NS),i=1,NObsA)
             if(NS.eq.8)
-     !        write(77,272,err=902) (Text1,(Text2,j=1,NS),i=1,NObsA)  
+     !        write(77,272,err=902) (Text1,(Text2,j=1,NS),i=1,NObsA)
             if(NS.eq.9)
-     !        write(77,273,err=902) (Text1,(Text2,j=1,NS),i=1,NObsA)  
+     !        write(77,273,err=902) (Text1,(Text2,j=1,NS),i=1,NObsA)
             if(NS.eq.10)
-     !        write(77,274,err=902) (Text1,(Text2,j=1,NS),i=1,NObsA)  
+     !        write(77,274,err=902) (Text1,(Text2,j=1,NS),i=1,NObsA)
             if(NS.eq.11)
-     !        write(77,275,err=902) (Text1,(Text2,j=1,NS),i=1,NObsA)  
+     !        write(77,275,err=902) (Text1,(Text2,j=1,NS),i=1,NObsA)
             if(NS.eq.12)
-     !        write(77,276,err=902) (Text1,(Text2,j=1,NS),i=1,NObsA)  
+     !        write(77,276,err=902) (Text1,(Text2,j=1,NS),i=1,NObsA)
           end if
         end if
       end if
@@ -719,7 +719,7 @@ c        read(*,*)
 115   format(//'MatNum, Param. array:'//'   Mat     Qr     Qs        ',
      !'Alfa         n          Ks      l      QrIm   QsIm  Omega'/)
 116   format(//'MatNum, Param. array:'//'   Mat     Qr     Qs        ',
-     !'Alfa         n          Ks      l      QrIm   QsIm   Alfa2       
+     !'Alfa         n          Ks      l      QrIm   QsIm   Alfa2
      ! n2  Omega'/)
 117   format(//'   Saturation   Air-Water Interfacial Area'/)
 120   format(i5,2x,2f7.3,3e12.3,4f7.3,2e12.3)
@@ -756,7 +756,7 @@ c        read(*,*)
 
       return
       end
-      
+
 ************************************************************************
 
       subroutine GenMat(NTab,NTabD,NMat,thr,ths,hSat,Par,hTab,ConTab,
@@ -853,7 +853,7 @@ c          if(ConSat(M).lt.ConSMax) ConSMax=ConSat(M)
 
 110   format(/7x,'Table of Hydraulic Properties which are interpolated i
      !n simulation'/7x,65('=')/)
-111   format(/7x,'Hydraulic Properties which are interpolated from input 
+111   format(/7x,'Hydraulic Properties which are interpolated from input
      ! tables in simulation'/7x,75('=')/)
 120   format('  theta         h        log h        C             K',
      !'        log K          S          Kv')
@@ -904,7 +904,7 @@ c          if(ConSat(M).lt.ConSMax) ConSMax=ConSat(M)
             read(31,*,err=901) rExtinct
           end if
         end if
-        read(31,*,err=901) 
+        read(31,*,err=901)
         read(31,*,err=901) hCritS
         read(31,*,err=901)
       else
@@ -936,9 +936,9 @@ c          if(ConSat(M).lt.ConSMax) ConSMax=ConSat(M)
 
 *      Latitude             ! Latitude of the location, [degree, N=+, S=-]
 *      Altitude             ! Altitude of the location above mean see level [m]
-*      ShortWaveRadA=0.25   ! fraction of extraterrestrial readiation on 
+*      ShortWaveRadA=0.25   ! fraction of extraterrestrial readiation on
 *                           ! overcast days, first Angstrom coefficient, a_s, eq.55
-*      ShortWaveRadB=0.50   ! Input, fraction of extraterrestrial readiation on 
+*      ShortWaveRadB=0.50   ! Input, fraction of extraterrestrial readiation on
 *                           !   overcast days, second Angstrom coefficient, b_s, eq.55
 *      LAI                  ! Leaf area index [-]
 *      LongWaveRadA=0.90    ! cloudiness factor, a_c, eq. 59
@@ -1117,7 +1117,7 @@ c        if(lActRSU) then              ! Active uptake only for the last solute
           read(30,*,err=901) OmegaS,SPot,rKM,cMin,lOmegaW
         end if
       end if
-      
+
       return
 
 *     Error when reading from an input file
@@ -1169,7 +1169,7 @@ c        if(lActRSU) then              ! Active uptake only for the last solute
         end if
         rtm=tRMed-tRMin
 	  if(rtm.lt.1.e-20.or.xRMed.lt.1.e-10) then
-          write(*,*) 'Time(depth) Root Data must be larger then Initial 
+          write(*,*) 'Time(depth) Root Data must be larger then Initial
      !Root Growth Time(depth) !!'
           goto 901
         end if
@@ -1285,7 +1285,7 @@ c        if(lActRSU) then              ! Active uptake only for the last solute
      !          CumCh(10,NSD),WDep(2+NMatD,NSD*9),Par(11,NMat)
 
       if(lScreen) write(*,*) 'reading solute transport information'
-      
+
       write(50,110,err=902)
       read(30,*,err=901)
       read(30,*,err=901)
@@ -1394,7 +1394,7 @@ c        if(lActRSU) then              ! Active uptake only for the last solute
       read(30,*,err=901)
       read(30,*,err=901) kTopCh,(cTop(jj),jj=1,NS),kBotCh,
      !                   (cBot(jj),jj=1,NS)
-      if(kTopCh.eq.-2) then 
+      if(kTopCh.eq.-2) then
         read(30,*,err=901)
         read(30,*,err=901) dSurf,cAtm
       end if
@@ -1411,7 +1411,7 @@ c        if(lActRSU) then              ! Active uptake only for the last solute
 *     Error when writing into an output file
 902   ierr=2
       return
-*     Bulk Density is equal to zero 
+*     Bulk Density is equal to zero
 903   ierr=3
       return
 
@@ -1451,7 +1451,7 @@ c        if(lActRSU) then              ! Active uptake only for the last solute
 
       character cFileName*200,cDataPath*200,cName*12,ch1*1,cName1*13,
      !          ch2*1
-      
+
       do 11 i=1,NS
         if(i.le.9) then
           write(ch1,'(i1)') i
@@ -1470,7 +1470,7 @@ c        if(lActRSU) then              ! Active uptake only for the last solute
 11    continue
       return
 
-*     Error when reading from an input file 
+*     Error when reading from an input file
 901   ierr=1
       return
       end
@@ -1485,8 +1485,8 @@ c        if(lActRSU) then              ! Active uptake only for the last solute
       character cLine*255, cVersion*10, cPcpStr*17
       integer*2 iVersion
 
-      call EmptyStr(cVersion)   
-      call EmptyStr(cLine)   
+      call EmptyStr(cVersion)
+      call EmptyStr(cLine)
 
       iGetFileVersion = 0
       iVersion = 0
@@ -1517,14 +1517,14 @@ c        if(lActRSU) then              ! Active uptake only for the last solute
         else
           rewind(FileUnit,err=1000)
         end if
-      end if   
+      end if
 
 1000  return
       end
 
 *#######################################################################
 *
-*     EMPTYSTR - vycisteni stringu            
+*     EMPTYSTR - vycisteni stringu
 *
 *#######################################################################
       subroutine EmptyStr(cString)
@@ -1533,7 +1533,7 @@ c        if(lActRSU) then              ! Active uptake only for the last solute
       iMax = Len(cString)
       do i=1,iMax
         write(cString(i:i),100,err=200) ' '
-      end do   
+      end do
 100   format(a1)
       return
 
@@ -1554,7 +1554,7 @@ c        if(lActRSU) then              ! Active uptake only for the last solute
      !                lDualNEq,lFlux,iCrop,iRootIn,lMassIni,lMetDaily,
      !                Sorb2,lActRSU,OmegaS,SPot,lOmegaW,OmegaW,
      !                lEnd,lVaporOut,lFluxOut)
- 
+
       integer TLevel,ALevel,PLevel,err
       logical lVarBC,lMeteo,lBact,lVapor,lEnBal,lDayVar,lEnter,lFiltr,
      !        lVaporOut,lExtrap,lPrintD,lLAI,lDensity,lMinstep,lPrint,
@@ -1616,7 +1616,7 @@ c        if(lActRSU) then              ! Active uptake only for the last solute
 *     lPrintD - Print at a daily (given) interval
 *     tPrintInt- Print interval
 *     nTabMod - Kode for the input of the soil hydraulic properties tables
-*     iDualPor- Dual porosity model; 
+*     iDualPor- Dual porosity model;
 *               = 1: transfer proportional to difference in water contents
 *               = 2: transfer proportional to difference in pressure heads
 *     lDualNEq- Both physical and chemical nonequilibrium are considered simultaneously, two-site sorption in the mobile zone
